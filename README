@@ -1,0 +1,11 @@
+A simple php framework.
+
+First, but it in your web directory, then put yours file in the same folder where Veloce' lib and config dir are.
+Then, edit config.php to configure.
+
+For using it, simple add at the very top of your code :
+require_once("lib/veloce.inc.php");
+
+Then, if you want to, for exemple, set a cookie, just type $cookie->set("Name", "Value");
+
+Wiki is incoming.
