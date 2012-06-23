@@ -94,7 +94,7 @@ class DatabaseCon {
 
 	public function put($string, $values=array()) {
 
-		$prepare = $this->link->prepare("INSERT INTO `".$this->ActiveTable."` VALUES(".$values.")");
+		$prepare = $this->link->prepare("INSERT INTO `".$this->ActiveTable."` VALUES(".$string.")");
 		$prepare->execute($values);
 
 	}

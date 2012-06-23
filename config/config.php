@@ -33,6 +33,24 @@ $security = array(
 
 
 //
+// PLUGINS
+//
+
+/*
+Here you cant set the active plugins in veloce, to do that, set to true the plugins that you want to activate, 
+and to false the others.
+We recomand you disable the plugins that you dont use.
+*/
+
+$plugins  = array(
+    "database" => true,
+    "html" => true,
+    "sessions" => true,
+    "cookie" => false,
+    "file" => false
+    );
+
+//
 // DATABASE
 //
 
