@@ -35,11 +35,11 @@ class Veloce {
 	}
 
     public function hash($str) {
-        return base64_encode(sha1( $str . $this->security) . $this->security);
+        return base64_encode(sha1( $str . $this->security["salt"]) . $this->security["salt"]);
     }
 
     public function uniqid() {
-        return uniqid($this->security);
+        return uniqid($this->security["salt"]);
     }
 
     public function redirect($url) {
