@@ -40,6 +40,7 @@ $security = array(
 Here you cant set the active plugins in veloce, to do that, set to true the plugins that you want to activate, 
 and to false the others.
 We recomand you disable the plugins that you dont use.
+WARNING: for using the account plugin you MUST activate the database plugin
 */
 
 $plugins  = array(
@@ -47,7 +48,8 @@ $plugins  = array(
     "html" => true,
     "sessions" => true,
     "cookie" => false,
-    "file" => false
+    "file" => false,
+    "account" => false
     );
 
 //
@@ -70,5 +72,21 @@ $databaseConf = array(
 	//"charset" => "UTF-8",
 	"database" => "veloce"
 	);
+
+//
+// ACCOUNT
+//
+
+/*
+In this section, set the account manager functions
+The 'table' param is the account table
+In the two other fields, you can set the SQL request for the login system.
+*/
+$accountManagerConf = array(
+    "table" => "users",
+    "sql_conf_login" => "SELECT id FROM %table% WHERE 'username' = ? AND 'password' = ? ",
+    "sql_conf_init" => "CREATE TABLE users('id' int(11) NOT NULL AUTO_INCREMENT,PRIMARY KEY('id'),'user' varchar(255),'password' varchar(255),'mail' varchar(255))"
+    );
+
 
 ?>
