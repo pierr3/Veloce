@@ -94,10 +94,6 @@ foreach($plugins as $plugin => $value):
                 $file = new FileManager();
             break;
 
-            case "account":
-                require_once("lib/account.php");
-            break;
-
         endswitch;
 
     endif;

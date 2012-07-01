@@ -1,0 +1,13 @@
+Options -Indexes
+Options +FollowSymlinks
+RewriteEngine on
+RewriteRule ^(.*)\.php$ veloce.php [NC]
+
+DirectoryIndex veloce.php
+
+ErrorDocument 404 {PATH}/veloce.php
+ErrorDocument 500 {PATH}/veloce.php
+ErrorDocument 502 {PATH}/veloce.php
+ErrorDocument 400 {PATH}/veloce.php
+ErrorDocument 401 {PATH}/veloce.php
+ErrorDocument 403 {PATH}/veloce.php

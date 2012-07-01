@@ -49,7 +49,6 @@ $plugins  = array(
     "sessions" => true,
     "cookie" => false,
     "file" => false,
-    "account" => false
     );
 
 //
@@ -74,19 +73,16 @@ $databaseConf = array(
 	);
 
 //
-// ACCOUNT
+// PATH
 //
 
 /*
-In this section, set the account manager functions
-The 'table' param is the account table
-In the two other fields, you can set the SQL request for the login system.
+THIS MUST BE SET !
+Here, set the path where your application is, for example, if your application is in a folder called "Blog", set this to /Blog
+The root value is a boolean, if your app is at the root folder of your server, set this to true.
 */
-$accountManagerConf = array(
-    "table" => "users",
-    "sql_conf_login" => "SELECT id FROM %table% WHERE 'username' = ? AND 'password' = ? ",
-    "sql_conf_init" => "CREATE TABLE users('id' int(11) NOT NULL AUTO_INCREMENT,PRIMARY KEY('id'),'user' varchar(255),'password' varchar(255),'mail' varchar(255))"
+$paths = array(
+    "root" => true,
+    "AppFolder" => "/veloce"
     );
-
-
 ?>
