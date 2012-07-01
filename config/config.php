@@ -40,7 +40,6 @@ $security = array(
 Here you cant set the active plugins in veloce, to do that, set to true the plugins that you want to activate, 
 and to false the others.
 We recomand you disable the plugins that you dont use.
-WARNING: for using the account plugin you MUST activate the database plugin
 */
 
 $plugins  = array(
