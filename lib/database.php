@@ -103,7 +103,8 @@ class DatabaseCon {
 
 		$sql = str_replace(array("%table%", "'"), array($this->ActiveTable, "`"), $string);
 		$prepare = $this->link->prepare($sql);
-		return $prepare->execute($values);
+		$prepare->execute($values);
+		return $prepare;
 
 	}
 
