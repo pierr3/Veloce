@@ -32,7 +32,6 @@ if (!empty($_SERVER["REDIRECT_STATUS"])) {
     if($HttpStatus==500) {Error("#500", "Internal Server Error.");die();}
     if($HttpStatus==502) {Error("#502", "Bad gateway.");die();}
 }
-
 if (!$paths["root"]) 
 {
     $path = $_SERVER["REQUEST_URI"];
@@ -43,7 +42,7 @@ if (!$paths["root"])
     $path = $_SERVER["REQUEST_URI"];
 }
 
-if ($path !== "/") {
+if($path !== "/") {
     if (file_exists("App". $path)) {
         include("App". $path);
     } else {
