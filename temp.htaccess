@@ -5,6 +5,11 @@ RewriteRule ^(.*)\.php$ veloce.php [NC]
 
 DirectoryIndex veloce.php
 
+<Files ~ "\.ve$">
+  Order allow,deny
+  Deny from all
+</Files>
+
 ErrorDocument 404 {PATH}/veloce.php
 ErrorDocument 500 {PATH}/veloce.php
 ErrorDocument 502 {PATH}/veloce.php
