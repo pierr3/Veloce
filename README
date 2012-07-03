@@ -1,26 +1,9 @@
 Veloce is a simple PHP framework, made for accelerating your project.
 
-<<<<<<< HEAD
 Veloce is not an MVC framework, but still handle all of your php files, and protect all your web application !
 
 To get started, launch install.php and follow the inscrutionsn then put ALL your php files in the App folder.
 You can now use the framework without addind any line of code ! For exemple, lets say you want to get an post in a database where the id is 5 in the table posts, just type $bdd->setActiveTable("posts"); and $bdd->get("'id' = 5");
 
 Your done !
-=======
-<<<<<<< HEAD
-First, but it in your web directory, then put yours file in the same folder where Veloce' lib and config dirs are.
-Then, see the wiki to configure.
 
-For using it, simple add your php file in the App folder. 
-
-Then, if you want to, for exemple,to set a cookie, just type $cookie->set("Name", "Value");
-=======
-Veloce is not an MVC framework, but still handle all of your php files, and protect all your web application !
-
-To get started, launch install.php and follow the inscrutionsn then put ALL your php files in the App folder.
-You can now use the framework without addind any line of code ! For exemple, lets say you want to get an post in a database where the id is 5 in the table posts, just type $bdd->setActiveTable("posts"); and $bdd->get("'id' = 5");
-
-Your done !
->>>>>>> Added alot of .htaccess and a new page protection
->>>>>>> 5cc5c4d5226bbffc7b584d2ab13c98f33e87550b

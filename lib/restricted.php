@@ -35,30 +35,14 @@ class Restricted {
 
 	public function check() {
 		if ($this->isBanned()) {
-<<<<<<< HEAD
             Error("#403", "Forbidden request.");die();
-=======
-
-			header("HTTP/1.1 403 Forbidden");
-
-			die();
-
->>>>>>> 5cc5c4d5226bbffc7b584d2ab13c98f33e87550b
 		} 
 	}
 
 	public function lock($ips=array()) {
         $j = $this->getWaiting();
 		if (!in_array($this->ip, $ips) || $this->isBanned()) {
-<<<<<<< HEAD
             Error("#403", "Forbidden request.");die();
-=======
-
-			header("HTTP/1.1 403 Forbidden");
-
-			die();
-
->>>>>>> 5cc5c4d5226bbffc7b584d2ab13c98f33e87550b
 		} else if(!empty($j[$this->ip]) && $j[$this->ip] != 0 && time() >= $j[$this->ip] && $j[$this->ip]+60 < time()+60) {
             $j[$this->ip] = 0;
 			file_put_contents("config/waiting.ve", json_encode($j));
