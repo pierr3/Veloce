@@ -1,5 +1,6 @@
 <?php
 require_once("lib/utils.php");
+require_once("config/config.php");
 
 if ($_GET["i"] == 1) {
 	function createSalt() {

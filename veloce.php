@@ -18,6 +18,11 @@
 */
 require_once("lib/veloce.inc.php");
 
+if ($security["checkBannedIps"]) {
+    $s = new Restricted();
+    $s->check();
+}
+
 if (!empty($_SERVER["REDIRECT_STATUS"])) {
     $HttpStatus = $_SERVER["REDIRECT_STATUS"] ;
     if($HttpStatus==400) {Error("#400", "You did an bad request.");die();}
