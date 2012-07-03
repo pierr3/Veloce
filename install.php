@@ -1,6 +1,9 @@
 <?php
 require_once("lib/utils.php");
+<<<<<<< HEAD
 require_once("config/config.php");
+=======
+>>>>>>> 5cc5c4d5226bbffc7b584d2ab13c98f33e87550b
 
 if ($_GET["i"] == 1) {
 	function createSalt() {
