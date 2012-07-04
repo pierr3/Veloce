@@ -24,28 +24,22 @@ session_start("Veloce" . sha1($security["salt"]));
 
 class Sessions {
 
-	private $s;
-
 	public function __construct() {
-		$this->s = $_SESSION;
+
 	}
 
 	public function set($key, $value) {
-		$key = base64_encode($key);
 		$value = base64_encode($value);
-		$this->s[$key] = $value;
+		$_SESSION[$key] = $value;
 	}
 
 	public function get($key) {
-		$key = base64_encode($key);
-		return base64_decode($this->s[$key]);
+		return $_SESSION[$key];
 	}
 
 	public function flush($key) {
-		$key = base64_encode($key);
-		$this->s[$key] = null;
-		unset($this->s[$key]);
-
+		$_SESSION[$key] = null;
+		unset($_SESSION[$key]);
 	}
 
 	public function destroy() {

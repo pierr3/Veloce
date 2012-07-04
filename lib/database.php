@@ -99,6 +99,14 @@ class DatabaseCon {
 
 	}
 
+	public function count($string, $values=array()) {
+
+		$prepare = $this->link->prepare("SELECT COUNT(*) as result FROM `".$this->ActiveTable."` WHERE ".$string);
+		$prepare->execute($values);
+		return $prepare->fetchAll();
+
+	}
+
 	public function query($string, $values=array()) {
 
 		$sql = str_replace(array("%table%", "'"), array($this->ActiveTable, "`"), $string);

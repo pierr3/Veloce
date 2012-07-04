@@ -19,11 +19,12 @@
 
 require_once("config/config.php");
 require_once("lib/utils.php");
+require_once("lib/restricted.php");
 
 if (strlen($security["salt"]) < 128) {
         Error("Salt key is not long enought", "Please change it in the config/config.php file, and put at least 128 chars.");
-} else if($security["salt"] === "MmCdwKkpfm62Y4GnZx6RSj9tAGejXkXxLLDD2HaiwkY9iFR3hfFdSLbz2MP2ftbhqgc85vxTUVSJDabbT4M6eN5DFbBmYgBQXyK6kBYWfvrsSaDyivek9VpFTTwzx8cB2y6Hqy3DuKnCSxR3zT7QVqt4yK76G4NkiY4aHHKp7c5abGjjLrYh4NCYykiN79fQ3hyjCKtoboFqttYPHJAkkG972YRKtQmuyvupUQJi85Bg4JvBxhdNGixKTtzra3jH") {
-    Error("Salt key is the default one.", "Please change it in the config/config.php file, and put at least 128 chars.");
+} if (file_exists("temp.htaccess")) {
+        Error("Not installed !", "Veloce is not installed, launch <a href='install.php'>install.php</a>.");
 }
 
 class Veloce {
@@ -35,7 +36,7 @@ class Veloce {
 	}
 
     public function hash($str) {
-        return base64_encode(sha1( $str . $this->security["salt"]) . $this->security["salt"]);
+        return base64_encode(sha1( $str . $this->security["salt"]));
     }
 
     public function uniqid() {

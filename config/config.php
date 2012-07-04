@@ -25,10 +25,12 @@
 The salt key is an security key, that is used for sessions, unique id, and safety
 YOU MUST CHANGE IT, IT MUST BE AT LEAST 128 CHARS
 Please put a secure one, with upper case, lower case and numbers.
+Set checkBannedIps to true to lock the acces to your website to all banned ips.
 */
 
 $security = array(
-    "salt" => "MmCdwKkpfm62Y4GnZx6RSj9tAGejXkXxLLDD2HaiwkY9iFR3hfFdSLbz2MP2ftbhqgc85vxTUVSJDabbT4M6eN5DFbBmYgBQXyK6kBYWfvrsSaDyivek9VpFTTwzx8cB2y6Hqy3DuKnCSxR3zT7QVqt4yK76G4NkiY4aHHKp7c5abGjjLrYh4NCYykiN79fQ3hyjCKtoboFqttYPHJAkkG972YRKtQmuyvupUQJi85Bg4JvBxhdNGixKTtzra3jH"
+    "salt" => "MmCdwKkpfm62Y4GnZx6RSj9tAGejXkXxLLDD2HaiwkY9iFR3hfFdSLbz2MP2ftbhqgc85vxTUVSJDabbT4M6eN5DFbBmYgBQXyK6kBYWfvrsSaDyivek9VpFTTwzx8cB2y6Hqy3DuKnCSxR3zT7QVqt4yK76G4NkiY4aHHKp7c5abGjjLrYh4NCYykiN79fQ3hyjCKtoboFqttYPHJAkkG972YRKtQmuyvupUQJi85Bg4JvBxhdNGixKTtzra3jH",
+    "checkBannedIps" => true
     );
 
 
@@ -40,7 +42,6 @@ $security = array(
 Here you cant set the active plugins in veloce, to do that, set to true the plugins that you want to activate, 
 and to false the others.
 We recomand you disable the plugins that you dont use.
-WARNING: for using the account plugin you MUST activate the database plugin
 */
 
 $plugins  = array(

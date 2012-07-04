@@ -18,6 +18,11 @@
 */
 require_once("lib/veloce.inc.php");
 
+if ($security["checkBannedIps"]) {
+    $s = new Restricted();
+    $s->check();
+}
+
 if (!empty($_SERVER["REDIRECT_STATUS"])) {
     $HttpStatus = $_SERVER["REDIRECT_STATUS"] ;
     if($HttpStatus==400) {Error("#400", "You did an bad request.");die();}
@@ -27,7 +32,6 @@ if (!empty($_SERVER["REDIRECT_STATUS"])) {
     if($HttpStatus==500) {Error("#500", "Internal Server Error.");die();}
     if($HttpStatus==502) {Error("#502", "Bad gateway.");die();}
 }
-
 if (!$paths["root"]) 
 {
     $path = $_SERVER["REQUEST_URI"];
@@ -38,7 +42,7 @@ if (!$paths["root"])
     $path = $_SERVER["REQUEST_URI"];
 }
 
-if ($path !== "/") {
+if($path !== "/") {
     if (file_exists("App". $path)) {
         include("App". $path);
     } else {
