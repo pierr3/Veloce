@@ -1,0 +1,6 @@
+Options -Indexes
+
+<Files ~ "\.ve$">
+  Order allow,deny
+  Deny from all
+</Files>

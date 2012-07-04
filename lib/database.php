@@ -92,10 +92,11 @@ class DatabaseCon {
 
 	}
 
-	public function put($string, $values=array()) {
+	public function put($string, $values=array(), $return) {
 
 		$prepare = $this->link->prepare("INSERT INTO `".$this->ActiveTable."` VALUES(".$string.")");
 		$prepare->execute($values);
+		if($return == 1) return $this->link->lastInsertId();
 
 	}
 
