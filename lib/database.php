@@ -92,19 +92,10 @@ class DatabaseCon {
 
 	}
 
-	public function put($string, $values=array(), $return) {
+	public function put($string, $values=array()) {
 
 		$prepare = $this->link->prepare("INSERT INTO `".$this->ActiveTable."` VALUES(".$string.")");
 		$prepare->execute($values);
-		if($return == 1) return $this->link->lastInsertId();
-
-	}
-
-	public function count($string, $values=array()) {
-
-		$prepare = $this->link->prepare("SELECT COUNT(*) as result FROM `".$this->ActiveTable."` WHERE ".$string);
-		$prepare->execute($values);
-		return $prepare->fetchAll();
 
 	}
 
