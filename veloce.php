@@ -18,6 +18,9 @@
 */
 require_once("lib/veloce.inc.php");
 
+session_start("Veloce" . sha1($security["salt"]));
+
+
 if ($security["checkBannedIps"]) {
     $s = new Restricted();
     $s->check();
@@ -40,6 +43,8 @@ if (!$paths["root"])
     $path = $path[0];
 } else {
     $path = $_SERVER["REQUEST_URI"];
+    $path = explode("?", $path);
+    $path = $path[0];
 }
 
 if($path !== "/") {

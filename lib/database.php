@@ -74,7 +74,7 @@ class DatabaseCon {
 
 	}
 
-	public function get($string, $values=array(), $fetchAll=1) {
+	public function get($string, $values=array(), $fetchAll=0) {
 
 		if ($string === "-all") {
 
@@ -105,6 +105,13 @@ class DatabaseCon {
 		$prepare = $this->link->prepare($sql);
 		$prepare->execute($values);
 		return $prepare;
+
+	}
+
+	public function delete($where, $values) {
+		
+		$prepare = $this->link->prepare("DELETE FROM `".$this->ActiveTable."` WHERE ".$where);
+		$prepare->execute($values);
 
 	}
 

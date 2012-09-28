@@ -77,12 +77,6 @@ foreach($plugins as $plugin => $value):
                 $html = new html();
             break;
 
-            case "sessions":
-                require_once("lib/sessions.php");
-
-                $session = new Sessions();
-            break;
-
             case "cookie":
                 require_once("lib/cookie.php");
 

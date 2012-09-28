@@ -74,6 +74,12 @@ class html {
 		echo '<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.0.0/prototype.js"></script>', PHP_EOL;
 	}
 
+	public function lorem($p) {
+		// Based on the loripsum API
+		// All rights to them
+		echo file_get_contents("http://loripsum.net/api/".$p);
+	}
+
 }
 
 
