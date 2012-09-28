@@ -75,8 +75,11 @@ class html {
 	}
 
 	public function lorem($p) {
+<<<<<<< HEAD
 		// Based on the loripsum API
 		// All rights to them
+=======
+>>>>>>> f978d388651e380e5df8f56ac9e459cc5a075891
 		echo file_get_contents("http://loripsum.net/api/".$p);
 	}
 
