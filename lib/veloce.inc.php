@@ -77,18 +77,6 @@ foreach($plugins as $plugin => $value):
                 $html = new html();
             break;
 
-            case "cookie":
-                require_once("lib/cookie.php");
-
-                $cookie = new Cookie();
-            break;
-
-            case "file":
-                require_once("lib/file.php");
-
-                $file = new FileManager();
-            break;
-
         endswitch;
 
     endif;
