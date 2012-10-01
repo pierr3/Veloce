@@ -1,20 +1,20 @@
 <?php
 /*
-	Veloce Framework
-    Copyright (C) 2012  Pierre Ferran
+Veloce Framework
+Copyright (C) 2012 Pierre Ferran
 
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
 
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
 
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+You should have received a copy of the GNU General Public License
+along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
 //
@@ -42,14 +42,15 @@ $security = array(
 //
 
 /*
-Here you cant set the active plugins in veloce, to do that, set to true the plugins that you want to activate, 
+Here you cant set the active plugins in veloce, to do that, set to true the plugins that you want to activate,
 and to false the others.
 We recomand you disable the plugins that you dont use.
 */
 
-$plugins  = array(
+$plugins = array(
     "database" => true,
-    "html" => true
+    "html" => true,
+    "cache" => true
     );
 
 //
@@ -66,12 +67,12 @@ Finally, set the database that you are going to work on.
 */
 
 $databaseConf = array(
-	"host" => "localhost",
-	"user" => "root",
-	"password" => "",
-	//"charset" => "UTF-8",
-	"database" => "veloce"
-	);
+"host" => "localhost",
+"user" => "root",
+"password" => "",
+//"charset" => "UTF-8",
+"database" => "veloce"
+);
 
 //
 // PATH
@@ -85,5 +86,18 @@ The root value is a boolean, if your app is at the root folder of your server, s
 $paths = array(
     "root" => true,
     "AppFolder" => "/veloce"
+    );
+// CACHE
+//
+
+/*
+In this section, you can set the cache configuration
+The directory is the directory witch will content all the veloce cache files
+MAKE SURE YOUR DIRECTORY IS IN CHMOD 777
+The duration parameter is the life time of your cache in minutes.
+*/
+$cacheConf = array(
+    'directory' => 'cache',
+    'duration' => 120
     );
 ?>
