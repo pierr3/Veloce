@@ -77,6 +77,12 @@ foreach($plugins as $plugin => $value):
                 $html = new html();
             break;
 
+            case "cache":
+                require_once("lib/cache.php");
+
+                $cache = new Cache($cacheConf);
+            break;
+
         endswitch;
 
     endif;
