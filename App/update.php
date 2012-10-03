@@ -27,7 +27,7 @@ if ($_GET["key"] != $security["updateKey"]) {
 	die();
 }
 
-$veloce_url = "http://veloce.pixelsdev.fr/update.php";
+$veloce_url = "http://veloce.pixelsdev.fr/dashboard/update.php";
 
 $version = file_get_contents("lib/version");
 $b_version = $version;
@@ -46,7 +46,7 @@ if ($a_version != $version) {
 
 	echo "Ok<br /> Downloading files...";
 
-	$i = 1;
+	$i = 0;
 	$start = chrono();
 
 	//Key is the php file name, value is the md5
