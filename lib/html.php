@@ -1,6 +1,23 @@
 <?php
-class html {
+/*
+	Veloce Framework
+    Copyright (C) 2012 Pierre Ferran
 
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+class html {
 
 	public function css($link) {
 		echo '<link rel="stylesheet" href="'.$link.'" type="text/css" />', PHP_EOL;
@@ -63,15 +80,19 @@ class html {
 	}
 
 	public function jquery() {
-		echo '<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>', PHP_EOL;
+		echo '<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>', PHP_EOL;
 	}
 
 	public function jqueryUI() {
-		echo '<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>', PHP_EOL;
+		echo '<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js"></script>', PHP_EOL;
 	}
 
 	public function prototype() {
-		echo '<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.0.0/prototype.js"></script>', PHP_EOL;
+		echo '<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.1.0/prototype.js"></script>', PHP_EOL;
+	}
+
+	public function chromeframe() {
+		echo '<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>', PHP_EOL;
 	}
 
 	public function lorem($p) {

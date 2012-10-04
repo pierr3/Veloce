@@ -50,7 +50,22 @@ We recomand you disable the plugins that you dont use.
 $plugins = array(
     "database" => true,
     "html" => true,
-    "cache" => true
+    "cache" => false,
+    "Classloader" => false
+    );
+
+//
+// Custom classes
+//
+
+/*
+If you added custom classes in the lib folder, Veloce can include them in your php files
+Just add them here
+*/
+
+$CustomClasses = array(
+    "myclass.php",
+    "youtubeApi.php"
     );
 
 //
@@ -83,10 +98,13 @@ THIS MUST BE SET !
 Here, set the path where your application is, for example, if your application is in a folder called "Blog", set this to /Blog
 The root value is a boolean, if your app is at the root folder of your server, set this to true.
 */
+
 $paths = array(
     "root" => true,
     "AppFolder" => "/veloce"
     );
+
+//
 // CACHE
 //
 
@@ -96,6 +114,7 @@ The directory is the directory witch will content all the veloce cache files
 MAKE SURE YOUR DIRECTORY IS IN CHMOD 777
 The duration parameter is the life time of your cache in minutes.
 */
+
 $cacheConf = array(
     'directory' => 'cache',
     'duration' => 120

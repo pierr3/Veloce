@@ -17,9 +17,31 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-function Error($header, $content) {
-	echo str_replace(array("%header%", "%content%"), array($header, $content), file_get_contents("lib/error.php"));
-	die();
+require_once("utils.php");
+
+class VeloceClassLoader {
+
+	private $ClassesConf;
+
+	public function __construct($c) {
+		$this->ClassesConf = $c;
+	}
+
+	public function init() {
+		foreach($this->ClassesConf as $c) {
+			if (file_exists("lib/".$c)) {
+				require_once("lib/".$c);
+			}
+		}
+
+	}
+
+	public function load($c) {
+			if (file_exists("lib/".$c)) {
+				require_once("lib/".$c);
+			}
+	}
+
 }
 
 ?>

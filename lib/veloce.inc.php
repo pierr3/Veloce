@@ -1,7 +1,7 @@
 <?php
 /*
 	Veloce Framework
-    Copyright (C) 2012  Pierre Ferran
+    Copyright (C) 2012 Pierre Ferran
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -81,6 +81,13 @@ foreach($plugins as $plugin => $value):
                 require_once("lib/cache.php");
 
                 $cache = new Cache($cacheConf);
+            break;
+
+            case "Classloader":
+                require_once("lib/vclassloader.php")
+
+                $vclassloader = new VeloceClassLoader($CustomClasses);
+                $vclassloader->init();
             break;
 
         endswitch;
